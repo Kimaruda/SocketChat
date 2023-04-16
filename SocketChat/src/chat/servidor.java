@@ -12,7 +12,7 @@ public class servidor {
  
     public void run(){
         try {
-            
+            System.out.println("Servidor Listo!");
             paquete recibido;
             ServerSocket server = new ServerSocket(4242);
             while(true){
@@ -31,5 +31,10 @@ public class servidor {
         } catch (Exception e) {
             
         } 
+    }
+
+    public static void main(String[] args) {
+        servidor s = new servidor();
+        s.run();
     }
 }
