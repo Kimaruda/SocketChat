@@ -133,7 +133,8 @@ public class cliente extends javax.swing.JFrame implements Runnable{
         
         try {
             paquete pack= new paquete(txt_remitente.getText(), txt_remitente.getText(), txt_mensajeenviado.getText());
-            Socket socketcliente= new Socket("127.0.0.1", 4242);
+            String ip_server = "172.20.0.10";
+            Socket socketcliente= new Socket(ip_server, 4242);
             ObjectOutputStream paqueteCliente= new ObjectOutputStream(socketcliente.getOutputStream());
                 paqueteCliente.writeObject(pack);
         } catch (Exception e) {
